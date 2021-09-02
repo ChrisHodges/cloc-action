@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 export PYTHONIOENCODING=utf8
-cloc $(git rev-parse HEAD) | perl -lne 'print $1 if m/.*/;' | tee -a cloc.txt
+cloc $(git rev-parse HEAD) | perl -lne 'print $0 if m/.*/;' | tee -a cloc.txt
 
 #get the second last line in the cloc.txt 
 line=$( tail -n 2 cloc.txt | head -1 )
