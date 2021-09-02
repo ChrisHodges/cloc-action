@@ -1,10 +1,8 @@
 #!/usr/bin/env sh
 export PYTHONIOENCODING=utf8
-# cloc $(git rev-parse HEAD) | perl -lne 'print "$4\n" if m/SUM:\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/;' | tee -a cloc.txt
-cloc --csv $(git rev-parse HEAD) | tee -a cloc.txt
-
-#get the second last line in the cloc.txt 
-line=$( tail -n 2 cloc.txt | head -1 )
+# cloc $(git rev-parse HEAD) | perl -lne 'print "$2\n" if m/SUM:\s+(\d+)\s+\d+\s+\d+\s+(\d+)/;' | tee -a cloc.txt
+cloc $(git rev-parse HEAD) | tee -a cloc.txt
+cat cloc.txt | perl -lne 'print "$2\n" if m/SUM:\s+(\d+)\s+\d+\s+\d+\s+(\d+)/;' | tee -a cloc.txt
 
 #get the code lines SUM
 num='undefined'
