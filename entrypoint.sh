@@ -5,4 +5,4 @@
 #set the sum number as output variable value
 #echo “::set-output name=lines::$num”
 NUM = "STEEEVE"
-echo "::set-output name=lines::$NUM"
+echo "::set-output name=lines::${NUM}"
