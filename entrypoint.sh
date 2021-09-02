@@ -8,4 +8,4 @@ line=$( tail -n 2 cloc.txt | head -1 )
 #echo “::set-output name=lines::$num”
 #num="STEEEVE"
 num=$(cat cloc.txt)
-echo "::set-output name=lines::${num}x"
+echo "::set-output name=lines::${line}x"
