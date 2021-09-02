@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-cloc $(git rev-parse HEAD) | tee -a cloc.txt
+cloc $(git rev-parse HEAD) | tee -a --json cloc.txt
 
 #get the second last line in the cloc.txt 
 line=$( tail -n 2 cloc.txt | head -1 )
