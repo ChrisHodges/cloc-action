@@ -4,6 +4,8 @@ description: 'Count Lines of Code with https://github.com/AlDanial/cloc'
 outputs:
   lines: # no of lines
     description: 'The number of lines'
+  files: # no of files
+    description: 'The number of files'
 
 runs:
   using: 'docker'
