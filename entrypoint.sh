@@ -6,6 +6,6 @@ line=$( tail -n 2 cloc.txt | head -1 )
 
 #get the code lines SUM
 num='undefined'
-if grep "SUM:\s" cloc.txt; then num='Assigned'; fi
+if grep "SUM:\s+" cloc.txt; then num='Assigned'; fi
 
 echo "::set-output name=lines::${num}"
