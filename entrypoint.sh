@@ -4,4 +4,5 @@
 #num=( echo {line} | awk -F" " ‘{ print $5}’)
 #set the sum number as output variable value
 #echo “::set-output name=lines::$num”
-echo "::set-output name=lines::55"
+NUM = "STEEEVE"
+echo "::set-output name=lines::$NUM"
