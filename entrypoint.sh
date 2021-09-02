@@ -5,11 +5,11 @@ cloc $(git rev-parse HEAD) | tee -a cloc.txt
 line=$( tail -n 2 cloc.txt | head -1 )
 
 #get the code lines SUM
-pat='SUM:\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)'
-num='Unassigned'
+pat='SUM'
+num='undefined'
 while [[ $line =~ $pat ]]; do
-  num=${BASH_REMATCH[4]}
+  num=${BASH_REMATCH[0]}
   num='Assigned'
 done
 
-echo "::set-output name=lines::${num}x"
+echo "::set-output name=lines::${num}"
